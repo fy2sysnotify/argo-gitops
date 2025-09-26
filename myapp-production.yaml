@@ -28,10 +28,6 @@ spec:
         app: myapp
         tier: production
     spec:
-      securityContext:
-        runAsUser: 1000
-        runAsGroup: 3000
-        fsGroup: 2000
       containers:
       - image: liquidreply/argocd-example-app:1
         name: myapp
@@ -47,5 +43,17 @@ spec:
           capabilities:
             drop:
               - ALL
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
 
 status: {}
