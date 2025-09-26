@@ -15,7 +15,6 @@ spec:
   selector:
     matchLabels:
       app: myapp
-      tier: production
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -26,8 +25,11 @@ spec:
       creationTimestamp: null
       labels:
         app: myapp
-        tier: production
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 3000
+        fsGroup: 2000
       containers:
       - image: liquidreply/argocd-example-app:1
         name: myapp
@@ -38,6 +40,11 @@ spec:
             limits:
                 cpu: "500m"
                 memory: "512Mi"
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
         livenessProbe:
           httpGet:
             path: /healthz
