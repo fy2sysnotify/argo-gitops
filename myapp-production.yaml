@@ -28,10 +28,6 @@ spec:
         app: myapp
         tier: production
     spec:
-      securityContext:
-        runAsUser: 1000
-        runAsGroup: 3000
-        fsGroup: 2000
       containers:
       - image: liquidreply/argocd-example-app:1
         name: myapp
