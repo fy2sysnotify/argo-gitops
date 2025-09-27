@@ -7,10 +7,10 @@ metadata:
   annotations:
     prometheus.io/scrape: "true"
     prometheus.io/port: "8080"
-  name: myapp-production
+  name: myapp-canary
   namespace: myapp
 spec:
-  replicas: 6
+  replicas: 3
   selector:
     matchLabels:
       app: myapp
@@ -26,7 +26,7 @@ spec:
         app: myapp
     spec:
       containers:
-      - image: liquidreply/argocd-example-app:1
+      - image: liquidreply/argocd-example-app:2
         name: myapp
         resources:
             requests:
