@@ -27,12 +27,12 @@
     &quot;assignee&quot;: &quot;fy2sysnotify&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/fy2sysnotify/argo-gitops.git",
-    "accountId": "03573477-0734-4937-8e27-ea00cd60ad15"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/fy2sysnotify/argo-gitops.git&quot;,
+    &quot;accountId&quot;: &quot;03573477-0734-4937-8e27-ea00cd60ad15&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;configuredContexts&quot;: [
@@ -210,6 +210,7 @@
       <workItem from="1758985414659" duration="120000" />
       <workItem from="1758986029197" duration="5000" />
       <workItem from="1759491984599" duration="103000" />
+      <workItem from="1759492089374" duration="407000" />
     </task>
     <servers />
   </component>
